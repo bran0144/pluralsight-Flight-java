@@ -4,27 +4,27 @@ public class Flight {
     private int passengers;
     private int flightNumber;
     private int totalCheckedBags;
-    private int seats = 150;
     private char flightClass;
     private boolean[] isSeatAvailable;
     private int maxCarryOns;
     private int totalCarryOns;
 
-    public Flight() {
-        this.maxCarryOns = this.seats * 2;
-        this.isSeatAvailable = new boolean[this.seats];
+    int getSeats() {return 150;}
 
-        for(int i = 0; i < this.seats; ++i) {
+    public Flight() {
+        this.maxCarryOns = getSeats() * 2;
+        this.isSeatAvailable = new boolean[getSeats()];
+        for(int i = 0; i < getSeats(); ++i) {
             this.isSeatAvailable[i] = true;
         }
 
     }
 
     public Flight(int flightNumber) {
-        this.maxCarryOns = this.seats * 2;
-        this.isSeatAvailable = new boolean[this.seats];
+        this.maxCarryOns = getSeats() * 2;
+        this.isSeatAvailable = new boolean[getSeats()];
 
-        for(int i = 0; i < this.seats; ++i) {
+        for(int i = 0; i < getSeats(); ++i) {
             this.isSeatAvailable[i] = true;
         }
 
@@ -32,35 +32,18 @@ public class Flight {
     }
 
     public Flight(char flightClass) {
-        this.maxCarryOns = this.seats * 2;
-        this.isSeatAvailable = new boolean[this.seats];
+        this.maxCarryOns = getSeats() * 2;
+        this.isSeatAvailable = new boolean[getSeats()];
 
-        for(int i = 0; i < this.seats; ++i) {
+        for(int i = 0; i < getSeats(); ++i) {
             this.isSeatAvailable[i] = true;
         }
 
         this.flightClass = flightClass;
     }
 
-    public void add1Passenger() {
-        if (this.hasSeating()) {
-            ++this.passengers;
-        } else {
-            this.handleTooMany();
-        }
-
-    }
-
-    public void add1Passenger(int bags) {
-        if (this.hasSeating()) {
-            this.add1Passenger();
-            this.totalCheckedBags += bags;
-        }
-
-    }
-
     private boolean hasSeating() {
-        return this.passengers < this.seats;
+        return this.passengers < getSeats();
     }
 
     private void handleTooMany() {
@@ -73,21 +56,13 @@ public class Flight {
 
     public boolean hasRoom(Flight f2) {
         int total = this.passengers + f2.passengers;
-        return total <= this.seats;
+        return total <= getSeats();
     }
 
     public Flight createNewWithBoth(Flight f2) {
         Flight newFlight = new Flight();
-        newFlight.seats = this.seats;
         newFlight.passengers = this.passengers + f2.passengers;
         return newFlight;
     }
 
-    public int getSeats() {
-        return this.seats;
-    }
-
-    public void setSeats(int seats) {
-        this.seats = seats;
-    }
 }
