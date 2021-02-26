@@ -7,7 +7,7 @@ public class CargoFlight extends Flight{
     @Override
     int getSeats() {return 12; }
 
-    public void add1Package(float h, float w, float d) {
+    public final void add1Package(float h, float w, float d) {
         float size = h * w * d;
         if(hasCargoSpace(size))
             usedCargoSpace += size;
