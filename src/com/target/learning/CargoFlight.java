@@ -15,6 +15,17 @@ public class CargoFlight extends Flight{
             handleNoSpace();
     }
 
+    public CargoFlight(int flightNumber) {
+        super(flightNumber);
+    }
+    public CargoFlight(int flightNumber, float maxCargoSpace) {
+        this(flightNumber);
+        this.maxCargoSpace = maxCargoSpace;
+    }
+    public CargoFlight() {}
+    public CargoFlight(float maxCargoSpace) {
+        this.maxCargoSpace = maxCargoSpace;
+    }
     private boolean hasCargoSpace(float size) {
         return usedCargoSpace + size <= maxCargoSpace;
     }
