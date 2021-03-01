@@ -2,9 +2,9 @@ package com.target.learning;
 
 public class Flight {
     private int passengers;
-    private int flightNumber;
+    private Integer flightNumber;
     private int totalCheckedBags;
-    private char flightClass;
+    private Character flightClass;
     private boolean[] isSeatAvailable;
     private int maxCarryOns;
     private int totalCarryOns;
@@ -66,10 +66,12 @@ public class Flight {
     }
     @Override
     public String toString() {
-        if(flightNumber > 0)
+        if(flightNumber != null)
             return "Flight #" + flightNumber;
-        else
+        else if(flightClass != null)
             return "Flight Class" + flightClass;
+        else
+            return "Flight idenity not set";
     }
 
 }
