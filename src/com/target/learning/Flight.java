@@ -64,5 +64,12 @@ public class Flight {
         newFlight.passengers = this.passengers + f2.passengers;
         return newFlight;
     }
+    @Override
+    public String toString() {
+        if(flightNumber > 0)
+            return "Flight #" + flightNumber;
+        else
+            return "Flight Class" + flightClass;
+    }
 
 }
