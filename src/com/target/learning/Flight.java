@@ -74,4 +74,10 @@ public class Flight {
             return "Flight idenity not set";
     }
 
+    public enum FlightCrewJob {
+        Pilot,
+        CoPilot,
+        FlightAttendant,
+        AirMarshal
+    }
 }
