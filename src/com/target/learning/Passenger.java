@@ -1,6 +1,6 @@
 package com.target.learning;
 
-public class Passenger implements Comparable<Passenger>{
+public class Passenger extends Person implements Comparable<Passenger> {
 
         private int memberLevel;
         private int memberDays;

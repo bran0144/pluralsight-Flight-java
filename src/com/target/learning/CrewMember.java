@@ -1,6 +1,6 @@
 package com.target.learning;
 
-public class CrewMember {
+public class CrewMember extends Person{
     private Flight.FlightCrewJob job;
 
     public CrewMember(Flight.FlightCrewJob job) {

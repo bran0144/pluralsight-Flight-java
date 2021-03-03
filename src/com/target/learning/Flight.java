@@ -3,8 +3,9 @@ package com.target.learning;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Iterator;
 
-public class Flight implements Comparable <Flight>{
+public class Flight implements Comparable <Flight>, Iterable<Person> {
     private int passengers;
     private Integer flightNumber;
     private int totalCheckedBags;
@@ -12,6 +13,8 @@ public class Flight implements Comparable <Flight>{
     private boolean[] isSeatAvailable;
     private int maxCarryOns;
     private int totalCarryOns;
+    private CrewMember[] crew;
+    private Passenger[] roster;
 
     int getSeats() {return 150;}
 
@@ -103,5 +106,8 @@ public class Flight implements Comparable <Flight>{
 
         return flightTime - f.flightTime;
 
+    }
+    public Iterator<Person> iterator() {
+        return new FlightIterator(crew, roster);
     }
 }
