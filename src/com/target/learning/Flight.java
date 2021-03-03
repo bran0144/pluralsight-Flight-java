@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Flight implements Comparable{
+public class Flight implements Comparable <Flight>{
     private int passengers;
     private Integer flightNumber;
     private int totalCheckedBags;
@@ -99,8 +99,8 @@ public class Flight implements Comparable{
         }
         }
     public int flightTime;
-    public int compareTo(Object o) {
-        Flight f = (Flight) o;
+    public int compareTo(Flight f) {
+
         return flightTime - f.flightTime;
 
     }

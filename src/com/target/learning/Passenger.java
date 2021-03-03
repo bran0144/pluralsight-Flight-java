@@ -1,10 +1,11 @@
 package com.target.learning;
 
-public class Passenger implements Comparable{
+public class Passenger implements Comparable<Passenger>{
+
         private int memberLevel;
         private int memberDays;
-        public int compareTo(Object o) {
-            Passenger p = (Passenger) o;
+
+        public int compareTo(Passenger p) {
             if(memberLevel > p.memberLevel)
                 return -1;
             else if(memberLevel < p.memberLevel)
