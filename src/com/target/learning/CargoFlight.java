@@ -1,5 +1,7 @@
 package com.target.learning;
 
+import java.io.FileNotFoundException;
+
 public class CargoFlight extends Flight{
     float maxCargoSpace = 1000.0f;
     float usedCargoSpace;
@@ -31,6 +33,10 @@ public class CargoFlight extends Flight{
     }
     private void handleNoSpace() {
         System.out.println("Not enough space");
+    }
+    @Override
+    public void addPassengers(String filename) throws FileNotFoundException {
+
     }
 
 }

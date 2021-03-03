@@ -1,5 +1,8 @@
 package com.target.learning;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public class CargoOnlyPilot extends Pilot{
     @Override
     public boolean canAccept(Flight f) {
