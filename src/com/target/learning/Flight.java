@@ -131,4 +131,5 @@ public class Flight implements Comparable <Flight>, Iterable<Person> {
         allPassengers = 0;
         return allPassengers;
     }
+    CrewMember p = CrewManager.FindAvailable(FlightCrewJob.Pilot);
 }
