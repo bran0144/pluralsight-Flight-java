@@ -129,5 +129,6 @@ public class Flight implements Comparable <Flight>, Iterable<Person> {
     }
     static int resetAllPassengers(){
         allPassengers = 0;
+        return allPassengers;
     }
 }
