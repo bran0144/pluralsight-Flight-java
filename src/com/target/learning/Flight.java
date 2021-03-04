@@ -81,6 +81,11 @@ public class Flight implements Comparable <Flight>, Iterable<Person> {
             return "Flight idenity not set";
     }
 
+    public int getPassengers() {
+        int total = this.passengers;
+        return total;
+    }
+
     public enum FlightCrewJob {
         Pilot,
         CoPilot,
@@ -109,5 +114,20 @@ public class Flight implements Comparable <Flight>, Iterable<Person> {
     }
     public Iterator<Person> iterator() {
         return new FlightIterator(crew, roster);
+    }
+
+    void add1Passenger(){
+        if(hasSeating()) {
+            passengers += 1;
+            allPassengers += 1;
+        } else
+            handleTooMany();
+    }
+    static int allPassengers;
+    static int getAllPassengers(){
+        return allPassengers;
+    }
+    static int resetAllPassengers(){
+        allPassengers = 0;
     }
 }
